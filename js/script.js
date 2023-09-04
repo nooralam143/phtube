@@ -8,15 +8,11 @@ const loadCategories = async () => {
     }
 
 }
-
 const loadCategory = (data) => {
     // console.log(data);
-
     const categoryId = document.getElementById('category');
     categoryId.textContent = '';
-    data.data.forEach((category) => {
-        // console.log(category.category_id);
-        // console.log(category.category);        
+    data.data.forEach((category) => {       
         const div = document.createElement('div');
         div.innerHTML = `
         <a onclick="handleLoadCategory('${category.category_id}')" class="btn btn-category">${category.category}</a>
@@ -32,8 +28,6 @@ const handleLoadCategory = async (categoryId = '1000') => {
     cardLoadingSpinner(true);
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
-    // console.log(data.data);
-
     const cardId = document.getElementById('card');
     cardId.textContent = '';
     const noContent = document.getElementById('no-content-id');
@@ -76,7 +70,6 @@ const handleLoadCategory = async (categoryId = '1000') => {
 
             const seconds = cardInfo.others.posted_date;
             const { hours, minutes } = convertSecondsToHoursMinutes(seconds);
-            // console.log(hours+' hrs', minutes+' min ago');
 
             const div = document.createElement('div');
             div.innerHTML = `
@@ -137,26 +130,17 @@ const cardLoadingSpinner = (isLoading) => {
     }
 }
 
+// convert Second to houre & minute
 function convertSecondsToHoursMinutes(seconds) {
     const hours = Math.floor(seconds / 3600);
-    const remainingSeconds = seconds % 3600;
-    const minutes = Math.floor(remainingSeconds / 60);
+    const restseconds = seconds % 3600;
+    const minutes = Math.floor(restseconds / 60);
 
     return { hours, minutes };
 }
 
-// btn Short Event handaler
-// const btnShort = document.getElementById('btnShort');
-// btnShort.addEventListener("click", videoShort=(data)=>{
-//     const dataShort = data.data;
-//     dataShort.forEach(data => {
-//         const view = data.others.views;
-//         console.log(view);
-//     })
-    
-    
-// });
 
 loadCategories();
 handleLoadCategory();
+Shortdisplay();
 cardLoadingSpinner(true);
