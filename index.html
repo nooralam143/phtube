@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="font-inter">
+    <header>
+        <nav class="container mx-auto mt-14">
+                <div class="flex gap-2 flex-col items-center sm:flex-col md:flex-col lg:flex-row justify-between bg-base-100">
+                    <div class="">
+                    <a class="btn btn-ghost normal-case font-bold text-3xl" href="index.html"><img src="img/icon.png" alt=""><Span
+                            class="text-[#FF1F3D]">PH</Span>Tube</a>
+                </div>
+                <div class="">
+                        <a class="btn capitalize font-medium text-lg" id="btnShort">Sort by view</a>
+                </div>
+                <div class="">
+                    <a class="btn capitalize bg-[#FF1F3D] text-white font-medium text-lg" href="blog.html">Blog</a>
+                </div>
+                </div>
+            <hr class="my-2">
+        </nav>
+        <section>
+           
+
+            <div class="categories container mx-auto mt-4">
+                <div class="navbar-center">
+                      <!-- spinner or loader -->
+            <div id="loading-category-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner text-primary loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+                    <!-- Dynamic category-->
+                    <div class="flex flex-col items-center sm:flex-col md:flex-col lg:flex-row justify-center px-1 gap-2 text-center" id="category">
+
+                      </div>
+                  </div>
+            </div>
+            
+        </section>
+    </header>
+    <main>
+        <section class="container mx-auto ">
+              <!-- spinner or loader -->
+              <div id="loading-card-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner text-primary loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+            <!-- No Content -->
+            <div class="no-content-class" id="no-content-id">
+
+            </div>
+            <!-- Dynamic Card -->
+            <div class="md:grid-cols-2 lg:grid-cols-4 grid grid-cols-1 gap-4 justify-center items-center mt-4" id="card">
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
